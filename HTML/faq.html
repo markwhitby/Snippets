@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+/*
+
+STILL IN PROGRESS NOT FOR USE
+
+
+
+
+*/
+
+
+.collapsible {
+	transition: all 100ms;
+}
+	.faq button{
+		color:#00abea;	
+		margin-top:1em;
+		cursor: pointer;
+		padding:0 0 8px 16px;
+		border:none;
+		border-bottom:1px solid #ccc;
+		display: table;
+		width: 100%;
+		background-color: transparent;
+		outline:none;
+		text-align: left;
+	}
+	/*.faq dt.down::after{
+		transform: rotate(90deg);
+		transform-origin: 14px 12px; 
+	}*/
+	/*.faq dt:last-of-type{
+		border:none;
+	}*/
+	
+	.faq dd {
+		margin-left:16px;
+		padding:8px 8px 24px 8px;
+	}
+
+
+/* hide items */
+.collapsible * + [aria-hidden="true"] {
+    display: none;
+	}
+.collapsible button::after{
+		content:"\003E";
+		display: table-cell;
+	  color:#fcb040;
+	  font-size: 16px;
+    float: right;
+    width: 20px;
+    height:20px;
+    text-align: center;
+	}
+
+	.collapsible button[aria-expanded="true"]::after{
+		-ms-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-webkit-transform:rotate(90deg);
+		transform: rotate(90deg);
+
+		-ms-transform-origin: 10px 10px; 
+		-moz-transform-origin: 10px 10px; 
+		-o-transform-origin: 10px 10px; 
+		-webkit-transform-origin: 10px 10px; 
+		transform-origin: 10px 10px; 
+	}
+
+	.collapsible button[aria-expanded="true"]{
+		border-bottom:0px;
+	}
+
+	.collapsible *[aria-hidden="false"]{
+		border-bottom:1px solid #ccc; /* matches the bottom border on the button */
+	}
+
+</style>
+</head>
+<body>
+
+<dl class="faq collapsible">
+	<dt>Question 1</dt>
+			<dd>Answer for Question 1</dd>
+	<dt>Question 2</dt>
+		<dd>Answer for Question 2</dd>
+	<dt>Question 3</dt>
+		<dd>Answer for Question 3</dd>
+	<dt>Question 4</dt>
+		<dd>Answer for Question 4</dd>
+	<dt>Question 5</dt>
+		<dd>Answer for Question 5</dd>
+</dl>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js">\x3C/script>')</script>
+
+
+<script>
+	$(document).ready(function(){
+
+		// /* FAQ ACCORDION */
+		// $(function () {
+		//     $('.faq dt').on('click', function (e) {
+		//       e.preventDefault();
+		//       $(this).parent('dl').children('dd:visible').slideUp('slow'); //hide children of the list      	  	
+		//       $(this).nextUntil('dt').filter(':not(:visible)').slideDown('slow');
+		//       $(this).siblings('dt').removeClass('down');
+		//        if($(this).hasClass('down')){
+		//        	$(this).removeClass(); 
+		//        }else{
+		// 	      $(this).addClass('down');
+		//        }
+		//     });
+		// });
+
+		/* original work by Heydon Pickering http://heydonworks.com/practical_aria_examples/ @heydonworks  */
+		$('[aria-controls="number"]').on('click', function() {
+		  var button = $(this);
+		  $('#number').val(function(i, oldval) {
+		    return button.is('[title*="add"]') ?
+		      parseInt(oldval, 10) + 10 :
+		      parseInt(oldval, 10) - 10;
+		  });
+		});
+
+		$('.collapsible dt').each(function() { // button level element
+		  var $this = $(this);
+		  // create unique id for a11y relationship
+		  var id = 'collapsible-' + $this.index();
+		  
+		  $this.nextUntil('dt').wrapAll('<div id="'+ id +'" aria-hidden="true">'); // wrap the content and make it focusable 
+		  var panel = $this.next();
+
+		  $this.wrapInner('<button aria-expanded="false" aria-controls="'+ id +'">');// Add the button inside
+		  var button = $this.children('button');
+
+		  button.on('click', function() { // Toggle the state properties
+		    var state = $(this).attr('aria-expanded') === 'false' ? true : false;
+
+		    $(this).attr('aria-expanded', state);
+		    panel.attr('aria-hidden', !state);
+		  });
+		});
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo Form </title>
+
+<style>
+
+input, textarea{
+	border:1px solid #ddd;
+	padding: 5px;
+	line-height: 1.2em;
+	margin-bottom: 5px;
+	position: relative;
+}
+
+input:focus, textarea:focus{
+	outline-offset: -2px;
+	outline: magenta auto 5px;
+}
+
+label{
+	font-size: .95em;
+	margin-bottom: 5px;
+}
+
+label small::before{
+	content:"(";
+} 
+label small::after{
+	content: ")";
+}
+
+.frmAddress{}/* Form address1 & 2 */
+.frmCommunity{}/* Form City/State combination */
+	.frmPlace{}/* Form Zip and Country - could be rolled into community */
+
+.visuallyHidden { /* visually hidden yet accesible via keyboard */
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- CONTACT FORM 
+
+field ids/names chosen to reflect the autofill abilities listed here 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autocomplete 
+relating to this 
+https://html.spec.whatwg.org/multipage/forms.html#autofill-field 
+https://wiki.whatwg.org/wiki/Autocomplete_Types
+*exceptions, city, state
+
+-->
+<form autocomplete="on"> 
+	<fieldset><legend>Contact Details</legend>
+			<p>
+				<label for="name">Full Name</label>
+					<input type="text" id="name" name="name" autocomplete="name" placeholder="Full Name" required aria-required="true" />
+			</p>
+
+			<p>
+				<label for="tel">Phone</label>
+					<input type="tel" id="tel" name="telephone" autocomplete="tel" placeholder="xxx-xxx-xxxx"  />
+			</p>
+
+			<p>
+				<label for="email">Email</label>
+					<input type="email" id="email" name="email" autocomplete="email" placeholder="name@domain.com" required aria-required="true" />
+			</p>
+			<!-- replaced by gender identity - use neither unless absolutely necessary
+			<p> <label for="sex">Sex:</label>
+				<select id="sex" name="sex" autocomplete="sex">
+					<option value="">Please Select</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select> 
+			</p>
+			-->
+			<fieldset><legend>What gender do you most identify with?</legend>
+				<p>
+					<label for="male"><input type="radio" id="male" name="sex" value="male" />Male</label>
+					<label for="female"><input type="radio" id="female" name="sex" value="female" />Female</label>
+				</p>
+			</fieldset>
+
+<!-- EXAMPLE OF USING DATALIST FOR TEST INPUT TO PRESELECT VALUES INSTEAD OF A SELECT LIST-->
+			<p>
+				<label>Choose a browser from this list:
+					<input type="text" list="browsers" name="myBrowser" required aria-required="true"/></label>
+					<datalist id="browsers">
+						<option value="">
+					  <option value="Chrome">
+					  <option value="Firefox">
+					  <option value="Internet Explorer">
+					  <option value="Opera">
+					  <option value="Safari">
+					</datalist>
+			</option>
+
+			<p>
+				<label for="url">Website</label>
+				<input type="url" name="url" id="url" autocomplete="url" placeholder="www.domain.com" required aria-required="true" />
+			</p>
+
+	</fieldset>
+
+
+	
+	<fieldset><legend>Address</legend>
+			<!-- single entry for address, line break preserved. https://html.spec.whatwg.org/multipage/forms.html#attr-fe-autocomplete-street-address
+			<label for="street-address">Street Address</label>
+			<textarea id="street-address" name="street-address"></textarea> 
+			-->
+			<p class="frmAddress">
+				<label for="address-line1">Address Line 1</label>
+					<input type="text" id="address-line1" name="address-line1" autocomplete="address-line1" placeholder="Street Address" required aria-required="true"/>
+			
+				<label for="address-line2">Address Line 2</label>
+					<input type="text" id="address-line2" name="address-line2" autocomplete="address-line2" placeholder="Suite #" required aria-required="true"/>
+			</p>
+			
+			<p class="frmCommunity">
+			<label for="city">City</label>
+				<input type="text" id="city" name="city" placeholder="Nashville" autocomplete="address-level2" required aria-required="true" />
+			
+			<!-- 
+			state list https://www.iso.org/obp/ui/#iso:code:3166:US 
+			*did not include outlying areas because they have a different country code.
+			-->
+			
+				<label for="state">State</label>
+				<input type="text" list="states" id="state" name="state" autocomplete="address-level1" required aria-required="true" >
+					<datalist id="states"> <!-- using the abbr first allow people to type TN for tennessee to prepopulate. will require server side changes if we only want one portion -->
+						<option value="AL - Alabama">
+						<option value="AK - Alaska">
+						<option value="AZ - Arizona">
+						<option value="AR - Arkansas">
+						<option value="CA - California">
+						<option value="CO - Colorado">
+						<option value="CT - Connecticut">
+						<option value="DE - Delaware">
+						<option value="DC - District of Columbia">
+						<option value="FL - Florida">
+						<option value="GA - Georgia">
+						<option value="HI - Hawaii">
+						<option value="ID - Idaho">
+						<option value="IL - Illinois">
+						<option value="IN - Indiana">
+						<option value="IA - Iowa">
+						<option value="KS - Kansas">
+						<option value="KY - Kentucky">
+						<option value="LA - Louisiana">
+						<option value="ME - Maine">
+						<option value="MD - Maryland">
+						<option value="MA - Massachusetts">
+						<option value="MI - Michigan">
+						<option value="MN - Minnesota">
+						<option value="MS - Mississippi">
+						<option value="MO - Missouri">
+						<option value="MT - Montana">
+						<option value="NE - Nebraska">
+						<option value="NV - Nevada">
+						<option value="NH - New Hampshire">
+						<option value="NJ - New Jersey">
+						<option value="NM - New Mexico">
+						<option value="NY - New York">
+						<option value="NC - North Carolina">
+						<option value="ND - North Dakota">
+						<option value="OH - Ohio">
+						<option value="OK - Oklahoma">
+						<option value="OR - Oregon">
+						<option value="PA - Pennsylvania">
+						<option value="RI - Rhode Island">
+						<option value="SC - South Carolina">
+						<option value="SD - South Dakota">
+						<option value="TN - Tennessee">
+						<option value="TX - Texas">
+						<option value="UT - Utah">
+						<option value="VT - Vermont">
+						<option value="VA - Virginia">
+						<option value="WA - Washington">
+						<option value="WV - West Virginia">
+						<option value="WI - Wisconsin">
+						<option value="WY - Wyoming">
+					</datalist>
+			</p>
+
+			<p class="frmPlace">
+				<label for="postal-code">Postal Code</label>
+					<input type="text" id="postal-code" name="postal-code" autocomplete="postal-code" placeholder="Postal Code" required aria-required="true" />
+			
+			<!--
+				ISO 3166 country name list can be generated here 
+				https://www.iso.org/obp/ui/#search/code/ 
+				sort on the short name column
+			-->	
+			
+				<label for="country">Country</label>
+				<select id="country" name="country" autocomplete="country">
+					<option value="">Please Select</option>
+					<option value="US">US</option>
+				</select>
+			</p>
+
+			<!-- alternate to country 
+				using the abbr first allows users to easily select the appropriate country versus scrolling through a list if only the country name was provided 
+
+			<p>
+				<label for="country-name">Country</label>
+				<select id="country-name" name="country-name" autocomplete="country-name">
+					<option value="">Please Select</option>
+					<option value="">...</option>
+				</select>
+			</p>
+
+			alternative to country with data list
+
+			<p>
+				<label for="country-name">Country</label>
+				<input list="countries" id="country-name" name="country-name" autocomplete="country-name">
+				<datalist id="countries">
+					<option value="US - United States">
+				</datalist>
+			</p>
+			-->
+	</fieldset>
+
+
+
+	<fieldset><legend>Secure Payment Information</legend>
+
+		<p>
+			<label for="cc-name">Name <small>as it appears on card</small></label>
+			<input type="text" id="cc-name" name="cc-name" autocomplete="cc-name" required aria-required="true" />
+		</p>
+
+<!-- refactor to use radio selection vs option list -->
+		<p>
+			<label for="cc-type">Type of Card</label>
+			<select id="cc-type" autocomplete="cc-type" required aria-required="true">
+				<option></option>
+				<option value="visa">Visa</option>
+				<option value="mastercard">Mastercard</option>
+				<option value="discover">Discover</option>
+				<option value="amex">American Express</option>
+				<option value="jcb">JCB</option>
+				<option value="diners-club">Diners Club</option>
+			</select>
+		</p>
+ 
+		<p>
+			<label for="cc-number">Card number <small>no dashes or space</small></label>
+			<input type="text" id="cc-number" name="cc-number" autocomplete="cc-number" required aria-required="true" />
+		</p>
+
+		<p>
+			<label for="">Expiration Date</label>
+			<label for="cc-exp-month" class="visuallyHidden">Expiration Month</label>
+			<select id="cc-exp-month" autocomplete="cc-exp-month" required aria-required="true">
+				<option value=""></option>
+				<option value="01">01-January</option>
+				<option value="02">02-February</option>
+				<option value="03">03-March</option>
+				<option value="04">04-April</option>
+				<option value="05">05-May</option>
+				<option value="06">06-June</option>
+				<option value="07">07-July</option>
+				<option value="08">08-August</option>
+				<option value="09">09-September</option>
+				<option value="10">10-October</option>
+				<option value="11">11-November</option>
+				<option value="12">12-December</option>
+			</select>
+
+			<!-- I almost think a text field with a datalist would be more effecient because it allows both manual input and selectable values ~mark -->
+			<label for="cc-exp-year" class="visuallyHidden">Expiration Year</label>
+			<select id="cc-exp-year" autocomplete="cc-exp-year" required aria-required="true">
+				<option value=""></option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="">...</option>
+			</select>
+		</p>
+
+		<p>
+			<label for="cc-csc">Security code <small>3 on back, Amex: 4 on front</small></label>
+			<input type="text" id="cc-csc" name="cc-csc" autocomplete="cc-csc" required aria-required="true"/>
+		</p>
+
+	</fieldset>
+
+
+	<fieldset><legend>Group name</legend>
+		<p><label for="a1"><input type="radio" id="a1" name="groupname" value="1" />1</label></p>
+		<p><label for="a2"><input type="radio" id="a2" name="groupname" value="2" />2</label></p>
+		<p><label for="a3"><input type="radio" id="a3" name="groupname" value="3" />3</label></p>
+		<p><label for="a4"><input type="radio" id="a4" name="groupname" value="4" />4</label></p>
+	</fieldset>
+
+
+	<p>
+		<label for="message">Message</label>
+		<textarea id="message"></textarea>
+	</p>
+
+
+	<p>
+		<label for="checkbox1"><input type="checkbox" id="checkbox1" name="checkbox1" value="Yes" aria-required="true" />
+		By checking this box, you agree dogs are smarter than cats.</label>
+	</p>
+	
+
+	<p><button type="submit" name="submit" value="">Submit Form</button></p>
+</form>
