@@ -1,2 +1,2 @@
 # Snippets
-Stash of random reusable snippets
+Stash of random snippets
