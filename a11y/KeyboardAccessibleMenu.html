@@ -146,6 +146,158 @@
     p { clear: both; }
 
 
+.stickybottom_nav{
+  margin:0; 
+  width:100%; 
+  display: table;
+  background: #fff;
+  color:#585858;
+  padding:0 30px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom:0;
+}
+
+.stickybottom_nav li a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color:#585858;
+}
+.stickybottom_nav ul {
+  position: absolute;
+  bottom:-300%;
+  padding:0;
+  opacity: 0;
+  -webkit-transition: 0.1s linear opacity;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.stickybottom_nav li:hover ul,
+.stickybottom_nav li:focus ul,
+.stickybottom_nav ul.show-menu {
+  left: 0;
+  opacity: 0.99;
+  bottom: 100%;
+  position: absolute;
+  overflow: visible;
+  padding-bottom: 3px;
+}
+
+
+
+.stickybottom_nav > li{
+  display: table;
+  height: 55px;
+  float: left;
+  word-break: break-word;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 14.15%;
+  margin:0 1.5%;
+}
+  .stickybottom_nav li:first-child {
+    margin-left:0;
+  }
+  
+  .stickybottom_nav li:last-child {
+    margin-right:0;
+  }
+  
+
+.stickybottom_nav > li a{/* applies to main and submenu */
+    width: 100%;
+    letter-spacing: .25em;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 15px 0 20px 0;
+    background: #fff;
+    color:#585858;
+    text-align: center;
+    transition: .1s all linear;
+    -webkit-transition: .1s all linear;
+    -moz-transition: .1s all linear;
+    -o-transition: .1s all linear;
+    font-size: .8em;
+    letter-spacing: .1em;
+}
+
+
+/* submenu*/
+.stickybottom_nav > li ul li a{
+  font-size:.8em;
+}
+
+
+/*  hover styles */
+  .stickybottom_nav li > a:hover,
+    .stickybottom_nav li > a:focus,
+    .stickybottom_nav li:focus > a,
+    .stickybottom_nav li:hover > a {
+      outline: 0;
+     }
+  .stickybottom_nav li a:hover{
+    color:#a80532;
+  }
+
+
+  .stickybottom_nav ul a:hover,
+    .stickybottom_nav ul a:focus {
+      background: #ebe5dc;
+      color: #333;
+      text-shadow: none;
+    }
+
+
+
+
+
+/* SUBNAV */
+
+.stickybottom_nav li ul{
+  box-shadow: 0 -5px 4px rgba(0,0,0,.05);
+  list-style: none;
+  margin:0;
+  background-color: #fff;
+  color:#585858;
+}
+
+.stickybottom_nav ul li[role="menuitem"]{
+  width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: ;
+    background: #fff;
+    color:#585858;
+    text-align: center;
+    transition: .1s all linear;
+    -webkit-transition: .1s all linear;
+    -moz-transition: .1s all linear;
+    -o-transition: .1s all linear;
+    font-size: .9em ;
+    letter-spacing: .1em;
+    list-style: none;
+}
+
+
+  /* fixes for the headings on reservations page */
+  .reservations.locations h3{
+    font-size: 1rem;
+    line-height: 1.25;
+    background: #ececec;
+    padding: 10px 2.5%;
+    margin: 10px 0;
+    text-transform: capitalize;
+    color: #4c4c4d;
+  }
+
+
+
 
 
 .screenreadable{ /* screen reader visible only.*/
@@ -169,34 +321,65 @@
 <div role="navigation" aria-label="Main menu">
   <ul class="nav">
     <li>
-      <a href="/locations"><span class="screenreadable">All</span>Locations</a>
+      <a href="/">A</a>
       <ul>
-        <li><a href="/JAlexanders/">J. Alexander's <span class="screenreadable">Locations</span></a></li>
-        <li><a href="/RedlandsGrill/">Redlands Grill <span class="screenreadable">Locations</span></a></li>
-        <li><a href="/StoneyRiver/">Stoney River <span class="screenreadable">Locations</span></a></li>
+        <li><a href="//">a</a></li>
+        <li><a href="//">b</a></li>
+        <li><a href="//">c</a></li>
       </ul>
     </li>
     <li>
-      <a href="/reservations"><span class="screenreadable">All</span>Reservations</a>
+      <a href="/">B</a>
       <ul>
-        <li><a href="/JAlexanders/reservations" title="J. Alexander's Reservations">J. Alexander's <span class="screenreadable">Reservations</span></a></li>
-        <li><a href="/RedlandsGrill/reservations" title="Redlands Grill Reservations">Redlands Grill <span class="screenreadable">Reservations</span></a></li>
-        <li><a href="/StoneyRiver/reservations" title="Stoney River Reservations">Stoney River <span class="screenreadable">Reservations</span></a></li>
+        <li><a href="/">b</a></li>
+        <li><a href="/">c</a></li>
+        <li><a href="/">d</a></li>
       </ul>
     </li>
-    <li class="gift-cards"><a href="/giftcards">Gift Cards</a></li>
-    <li class="careers"><a href="/careers">Careers</a></li>
-    <li class="contact"><a href="/contact">Contact</a></li> 
-    <li class="investors"><a href="http://investor.jalexandersholdings.com/">Investors</a></li>
+    <li><a href="/">C</a></li>
+    <li><a href="/">D</a></li>
+    <li><a href="/">E</a></li> 
+    <li><a href="/">F</a></li>
   </ul> 
 </div>
 
 
-<a href="http://google.com">google.com</a>
+
+<div role="navigation" aria-label="Main menu">
+  <ul class="stickybottom_nav">
+    <li>
+      <a href="/">A</a>
+      <ul>
+        <li><a href="//">a</a></li>
+        <li><a href="//">b</a></li>
+        <li><a href="//">c</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/">B</a>
+      <ul>
+        <li><a href="/">b</a></li>
+        <li><a href="/">c</a></li>
+        <li><a href="/">d</a></li>
+      </ul>
+    </li>
+    <li><a href="/">C</a></li>
+    <li><a href="/">D</a></li>
+    <li><a href="/">E</a></li> 
+    <li><a href="/">F</a></li>
+  </ul> 
+</div>
+
+
+
+
+
+
+
 
 <script>
 $(document).ready(function() {
-  $('.nav').setup_navigation();
+  $('div[role="navigation"]').setup_navigation();
 }); 
 /*
 $(function(){
@@ -366,71 +549,6 @@ $.fn.setup_navigation = function(settings) {
         break;
     }
 
-
-
-
-
-
-
-
-
-    // if(e.keyCode == 37) {
-    //   e.preventDefault();
-    //   // This is the first item
-    //   if($(this).parent('li').prev('li').length == 0) {
-    //     $(this).parents('ul').find('> li').last().find('a').first().focus();
-    //   } else {
-    //     $(this).parent('li').prev('li').find('a').first().focus();
-    //   }
-    // } else if(e.keyCode == 38) {
-    //   e.preventDefault();
-    //   if($(this).parent('li').find('ul').length > 0) {
-    //     $(this).parent('li').find('ul')
-    //       .attr('aria-hidden', 'false')
-    //       .addClass(settings.menuHoverClass)
-    //       .find('a').attr('tabIndex',0)
-    //         .last().focus();
-    //   }
-    // } else if(e.keyCode == 39) {
-    //   e.preventDefault();
-    //   // This is the last item
-    //   if($(this).parent('li').next('li').length == 0) {
-    //     $(this).parents('ul').find('> li').first().find('a').first().focus();
-    //   } else {
-    //     $(this).parent('li').next('li').find('a').first().focus();
-    //   }
-    // } else if(e.keyCode == 40) {
-    //   e.preventDefault();
-    //   if($(this).parent('li').find('ul').length > 0) {
-    //     $(this).parent('li').find('ul')
-    //       .attr('aria-hidden', 'false')
-    //       .addClass(settings.menuHoverClass)
-    //       .find('a').attr('tabIndex',0)
-    //         .first().focus();
-    //   }
-    // } else if(e.keyCode == 13 || e.keyCode == 32) {
-    //   // If submenu is hidden, open it
-    //   e.preventDefault();
-    //   $(this).parent('li').find('ul[aria-hidden=true]')
-    //       .attr('aria-hidden', 'false')
-    //       .addClass(settings.menuHoverClass)
-    //       .find('a').attr('tabIndex',0)
-    //         .first().focus();
-    // } else if(e.keyCode == 27) {
-    //   e.preventDefault();
-    //   $('.'+settings.menuHoverClass)
-    //     .attr('aria-hidden', 'true')
-    //     .removeClass(settings.menuHoverClass)
-    //     .find('a')
-    //       .attr('tabIndex',-1);
-    // } else {
-    //   $(this).parent('li').find('ul[aria-hidden=false] a').each(function(){
-    //     if($(this).text().substring(0,1).toLowerCase() == keyCodeMap[e.keyCode]) {
-    //       $(this).focus();
-    //       return false;
-    //     }
-    //   });
-    // }
   });
   
   
@@ -491,58 +609,6 @@ $.fn.setup_navigation = function(settings) {
         }
         break;
     }
-
-
-
-
-
-    // if(e.keyCode == 38) {
-    //   e.preventDefault();
-    //   // This is the first item
-    //   if($(this).parent('li').prev('li').length == 0) {
-    //     $(this).parents('ul').parents('li').find('a').first().focus();
-    //   } else {
-    //     $(this).parent('li').prev('li').find('a').first().focus();
-    //   }
-    // } else if(e.keyCode == 40) {
-    //   e.preventDefault();
-    //   if($(this).parent('li').next('li').length == 0) {
-    //     $(this).parents('ul').parents('li').find('a').first().focus();
-    //   } else {
-    //     $(this).parent('li').next('li').find('a').first().focus();
-    //   }
-    // } else if(e.keyCode == 27 || e.keyCode == 37) {
-    //   e.preventDefault();
-    //   $(this)
-    //     .parents('ul').first()
-    //       .prev('a').focus()
-    //       .parents('ul').first().find('.'+settings.menuHoverClass)
-    //         .attr('aria-hidden', 'true')
-    //         .removeClass(settings.menuHoverClass)
-    //         .find('a')
-    //           .attr('tabIndex',-1);
-    // } else if(e.keyCode == 32) {
-    //   e.preventDefault();
-    //   window.location = $(this).attr('href');
-    // } else {
-    //   var found = false;
-    //   $(this).parent('li').nextAll('li').find('a').each(function(){
-    //     if($(this).text().substring(0,1).toLowerCase() == keyCodeMap[e.keyCode]) {
-    //       $(this).focus();
-    //       found = true;
-    //       return false;
-    //     }
-    //   });
-      
-    //   if(!found) {
-    //     $(this).parent('li').prevAll('li').find('a').each(function(){
-    //       if($(this).text().substring(0,1).toLowerCase() == keyCodeMap[e.keyCode]) {
-    //         $(this).focus();
-    //         return false;
-    //       }
-    //     });
-    //   }
-    // }
   });
 
     
