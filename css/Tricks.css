@@ -1,0 +1,40 @@
+
+/* BROKEN IMAGE STYLING */
+img:before{
+	content:"";
+	display: block;
+
+	position: absolute;
+	top:-10px;
+	left:0;
+	height: calc(100% + 10px);
+	width:100%;
+	background-color:rgba(0,0,0,.6);
+	border: 2px dotted rgba(0,0,0,.8);
+	border-radius: 5px;
+}
+img:after{
+	content:"\f127" "Broken Image of " attr(alt);
+	display: block;
+	font-size:1em;
+	font-style: normal;
+	font-family: serif;
+	color:rgba(0,0,0,1);
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width:100%;
+	text-align: center;
+}
+
+
+/* FLUID TYPOGRAPHY  doesnt always work */
+
+p{ 
+	/* scale from 16px to 24 from min screen w of 400 to max screen of 800  */
+	font-size: calc(16px+(24-16)*(100vw-400px)/(800-400));
+}
+
+
+
+

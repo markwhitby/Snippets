@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accesibile Accordion</title>
+<!-- Original Work by Heydon Pickering http://heydonworks.com/practical_aria_examples/ -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<style type="text/css">
+		.collapsible {
+		/*	padding: 1.5em;
+			background: #E0E1EF;*/
+		}
+	.collapsible h3{
+		margin:0;
+		border-bottom:10px solid transparent;
+	}
+		.collapsible  button,
+		 .collapsible [role="button"],
+		 .collapsible  [role="button"]:visited,
+		 .collapsible  [role="button"]:hover,
+		 .collapsible  [type="submit"],
+		 .collapsible  [type="reset"] 
+		 {
+			background: #ececec; /* needed to avoid jumpiness in the show/hide */
+			border: 0;
+			color: #58585a;
+			display: inline-block;
+			font-size: 1.25em;
+			padding: 15px 10px;
+			margin: 10px 0;
+			font-weight: 700;
+			cursor: pointer;
+			letter-spacing: 2px;
+			width: auto;
+			font-family: inherit;
+			vertical-align: middle;
+			text-transform: capitalize;
+			/*outline: 4px solid rgba(255,255,255,0);*/
+		}
+
+		.collapsible button:focus, /* BUTTON FOCUSED STATE */
+		.collapsible [role="button"]:focus,
+		.collapsible [type="submit"]:focus,
+		.collapsible [type="reset"]:focus 
+		{
+			/*outline: 4px solid #222;*/
+			background: #0F1E2D;
+			color:#fff;
+		}
+
+		.collapsible button:active, /* DOWN BUTTON ACTIVE STATE */
+		.collapsible [role="button"]:active,
+		.collapsible [type="submit"]:active,
+		.collapsible [type="reset"]:active 
+		{
+			background: #929292;
+			border: 0;
+		}
+
+
+		
+
+		
+
+		.collapsible h3 [aria-expanded] {
+			display: block;
+			width: 100%;
+			font-size: inherit;
+			font-family: inherit;
+			text-transform: inherit;
+			text-align: inherit;
+			margin: 0;
+		}
+
+		.collapsible h3 [aria-expanded]:before {
+			content: '\25ba\0020';
+		}
+
+		.collapsible h3 [aria-expanded="true"]:before {
+			content: '\25bc\0020';
+		}
+
+/*		.collapsible h3 + [aria-hidden] {
+			display: none;
+		}*/
+
+		.collapsible h3 + [aria-hidden="false"] {
+			display: block;
+		}
+		/* remove margin from first child to prevent bouncing since h3 has margin */
+		.collapsible div >:first-child{
+			margin-top:0;
+			padding-top:0;
+		}
+		/* remove margin from last child to prevent bouncing since h3 has margin */
+		.collapsible div >:last-child{
+			margin-bottom:0;
+			padding-bottom:0;
+		}
+		/* mystyles */
+		.collapsiblebutton{}
+
+
+	</style>
+</head>
+
+<body>
+			
+	<div class="collapsible">
+		
+		<h3>First title in block of content</h3>
+		<p>Aliquam tincidunt velit sit amet <a href='#'>ante hendrerit</a> tempus. Potenti et eros sed justo &ndash; commodo bibendum non at nunc. Fusce ac sodales magna. Suspendisse potenti cras molestie, risus a enim convallis vitae luctus libero lacinia. Cras molestie risus a enim &#8216;convallis vitae&#8217; luctus libero lacinia. </p><p>Nulla auctor eleifend turpis consequat pharetra: Vestibulum sit amet ipsum lacus&hellip; Nulla vel magna sit &mdash; amet dui lobortis commodo &mdash; vitae vel nulla. </p><p>Curabitur consectetur faucibus nisl ac varius. Curabitur consectetur; faucibus nisl ac varius. Nunc iaculis risus vel orci ornare dignissim sed vitae nulla. Nulla auctor eleifend turpis consequat pharetra. Suspendisse potenti H<sub>2</sub>0. Suspendisse <em>potenti</em>. </p>
+		
+		<h3>Another Third Level Heading</h3>
+		<p>Aliquam nisl enim&hellip; tristique tempus placerat at, posuere in lectus. Potenti et eros sed justo commodo bibendum non at nunc. Aliquam nisl enim, tristique tempus placerat at, posuere in lectus. Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh, iaculis pretium sem orci aliquet mauris. Duis sagittis, est sit amet gravida tristique, purus lectus venenatis urna, id &#8216;molestie&#8217; magna risus ut nunc. Donec tempus tempus tellus, ac lacinia turpis mattis ac. Curabitur consectetur; faucibus nisl ac varius. </p><p>Nunc iaculis risus vel &#8216;Orci Ornare&#8217; dignissim sed vitae nulla. Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh, <a href='#'>iaculis pretium</a> sem orci aliquet mauris. Fusce ac sodales magna. Nulla auctor eleifend 23<sup>rd</sup> of May turpis consequat pharetra. Suspendisse potenti H<sub>2</sub>0. </p>
+
+
+		<h3 id="Georgia">Georgia</h3>
+
+		<div class="locationDetails">
+    	<h2>Atlanta, GA</h2>
+
+    	<div class="location-details">
+	      <p><a href="http://maps.google.com/maps?q=Stoney+River+Restaurant,+Cumberland+Mall,+Atlanta,+Georgia+30339&amp;hl=en&amp;sll=33.879726,-84.470443&amp;sspn=0.014501,0.033023&amp;vpsrc=0&amp;gl=us&amp;hq=Stoney+River+Restaurant,+Cumberland+Mall,&amp;hnear=Atlanta,+Georgia+30339&amp;t=m&amp;z=17&amp;iwloc=A" target="_blank">1640 Cumberland Mall<br />Atlanta, GA 30339</a></p>
+	      <p><strong>GM:</strong> David
+	      Moore<br />
+	      (678) 305-9229</p>
+	      <p><strong>Hours of
+	      Operation</strong><br />
+	      Mon-Thu: 11am-10pm<br />
+	      Fri: 11am-10:30pm<br />
+	      Sat: 12pm-10:30pm<br />
+	      Sun: 12pm-9:30pm</p>
+	    </div>
+
+	    <div class="location-reservations">
+	      <p class="menus"><strong>Menus</strong><br />
+	      <a href="http://jalexandersholdings.com/assets/downloads/Stoney-Cumberland_lunch-menu-2-10-16.pdf" target="_blank">Lunch Menu</a><br />
+	      <a href="http://jalexandersholdings.com/assets/downloads/Stoney-Cumberland_dinner-menu-2-10-16.pdf" target="_blank">Dinner Menu</a></p>
+
+	      <p><strong>Reservations</strong><br />
+	      <a href=
+	      "http://www.opentable.com/single.aspx?rid=110506&amp;restref=110506&amp;rtype=ism"
+	      class="reserveTable" target="_blank">Reserve a Table</a></p>
+	    </div>
+  	</div>
+
+ 
+
+
+	</div>
+			
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	/* 3. Progressive collapsibles
+-----------------------------------------------------------------------------------------
+*/
+
+$('.collapsible h3').each(function() {
+
+  var $this = $(this);
+
+  // create unique id for a11y relationship
+
+  var id = 'collapsible-' + $this.index();
+
+  // wrap the content and make it focusable
+  $this.nextUntil('h3').wrapAll('<div id="'+ id +'" aria-hidden="true">');
+  
+  //hide the panel in order to run the transition. 
+  var panel = $this.next();
+  panel.hide(); 
+
+
+
+  // Add the button inside the <h3> so both the heading and button semanics are read
+  $this.wrapInner('<button aria-expanded="false" aria-controls="'+ id +'" class="collapsiblebutton">');
+
+  var button = $this.children('button');
+
+  // Toggle the state properties
+
+  button.on('click', function() {
+  	console.log('trigger fade effect');
+  	if($(this).parent().next('div').is(':hidden') == true) {	
+			$(this).parent().next().slideDown(400);
+ 		}else{
+ 			$(this).parent().next().slideUp(400);
+ 		}  
+
+
+    var state = $(this).attr('aria-expanded') === 'false' ? true : false;
+    $(this).attr('aria-expanded', state);
+    panel.attr('aria-hidden', !state);
+  });
+
+});</script>
+
+</body>

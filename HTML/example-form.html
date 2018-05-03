@@ -193,7 +193,7 @@ https://wiki.whatwg.org/wiki/Autocomplete_Types
 					</datalist>
 			</p>
 
-			<p class="frmPlace">
+			<p class="frmPlace"><!-- number input is not recommended -->
 				<label for="postal-code">Postal Code</label>
 					<input type="text" id="postal-code" name="postal-code" autocomplete="postal-code" placeholder="Postal Code" required aria-required="true" />
 			
@@ -256,9 +256,9 @@ https://wiki.whatwg.org/wiki/Autocomplete_Types
 			</select>
 		</p>
  
-		<p>
+		<p><!-- number input is not recommended -->
 			<label for="cc-number">Card number <small>no dashes or space</small></label>
-			<input type="text" id="cc-number" name="cc-number" autocomplete="cc-number" required aria-required="true" />
+			<input type="text" id="cc-number" name="cc-number" autocomplete="cc-number" required aria-required="true" inputmode="numeric" />
 		</p>
 
 		<p>

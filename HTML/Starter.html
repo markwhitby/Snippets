@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width">
+
+<!-- OpenGraph data for social sharing-->
+  <meta property="og:title" content="My Shared Article Title" />
+  <meta property="og:description" content="Description of shared article" />
+  <meta property="og:url" content="http://example.com/my_article.html" />
+  <meta property="og:image" content="http://example.com/foo.jpg" />
+<!-- end openGraph -->
+
+
+	<title></title>
+	<!-- <link rel="stylesheet" href="/styles/main.css"/> -->
+	<style>
+		.skipLink{
+			position: absolute;
+    	left: -1000px;
+    	top: -1000px;
+    	width: 1px;
+    	height: 1px;
+    	overflow: hidden;
+    }
+		.hidden-silent{ /* not heard or viewable */ display: none; visibility: hidden; }
+    .hidden-spoken{ /* element hidden but text is spoken */
+			position: absolute !important;
+	    width: 1px !important;
+	    height: 1px !important;
+	    padding: 0 !important;
+	    margin: -1px !important;
+	    overflow: hidden;
+	    clip: rect(0px 0px 0px 0px); /* IE 6-7 */
+	    clip: rect(0px,0px,0px,0px);
+	    border: 0 !important;
+
+    }
+    .hidden-
+
+    /* svg icon styles */
+    #icon-facebook{	fill:#3b5998; }
+    #icon-twitter{ fill:#1da1f2; }
+   	#icon-linkedin path{fill:#fff;}
+    #icon-linkedin .background{fill: #007bb5;}
+    
+	</style>
+</head>
+
+<body>
+	<a class="skipLink" href="#content">Skip to main content</a>
+
+	<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<symbol id="icon-search" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Search Icon</title>
+				<desc>Outline of a magnifying glass</desc>
+				<path d="M63.43,57.9a2,2,0,0,1,0,2.76l-2.76,2.76a2,2,0,0,1-2.76,0L38.57,44.09a1.91,1.91,0,0,1-.44-0.72,24.06,24.06,0,1,1,5.25-5.25,1.88,1.88,0,0,1,.72.44ZM24,8A16,16,0,1,0,40,24,16,16,0,0,0,24,8Z"/>
+			</symbol>
+			<symbol id="icon-menu" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Menu Icon</title>
+				<desc>Three horizontal lines</desc>
+				<path d="M61.26,27.43H2.74C0.22,27.43,0,29.47,0,32s0.22,4.57,2.74,4.57H61.26c2.52,0,2.74-2,2.74-4.57S63.78,27.43,61.26,27.43Zm0,18.29H2.74c-2.52,0-2.74,2-2.74,4.57s0.22,4.57,2.74,4.57H61.26c2.52,0,2.74-2,2.74-4.57S63.78,45.71,61.26,45.71ZM2.74,18.29H61.26c2.52,0,2.74-2,2.74-4.57s-0.22-4.57-2.74-4.57H2.74c-2.52,0-2.74,2-2.74,4.57S0.22,18.29,2.74,18.29Z"/>
+			</symbol>
+			<symbol id="icon-phone" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Phone Icon</title>
+				<desc>Outline of rotary phone</desc>
+				<path d="M55.33,39.24a5.27,5.27,0,0,0-4.1-4.31c-8.28-1.94-10.36-6.71-10.71-12A48.32,48.32,0,0,0,32,22.36a48.32,48.32,0,0,0-8.52.57c-0.35,5.29-2.43,10.06-10.71,12a5.27,5.27,0,0,0-4.1,4.31L7.08,50.31a6.38,6.38,0,0,0,6.28,7.41h37.3a6.38,6.38,0,0,0,6.28-7.41l-1.6-11.07h0ZM32,49.66a8,8,0,1,1,8.12-8A8.08,8.08,0,0,1,32,49.66ZM64,19.14C63.91,14.32,51.64,6.28,32,6.28s-31.92,8-32,12.86,0.07,11.1,8.15,10.05C17.62,28,17,24.67,17,19.95c0-3.29,7.69-4.09,15-4.09s15,0.79,15,4.09c0,4.72-.58,8,8.87,9.25C63.92,30.24,64.06,24,64,19.14Z"/>
+			</symbol>
+			<symbol id="icon-right-arrow" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Right Arrow Icon</title>
+				<desc>Two angled lines meeting at a centerpoint to the right</desc>
+				<path d="M50.66,32A2,2,0,0,1,50,33.48L20.14,63.36a2,2,0,0,1-3,0L14,60.15a2,2,0,0,1,0-3L39.18,32,14,6.8a2,2,0,0,1,0-3l3.21-3.21a2,2,0,0,1,3,0L50,30.52A2,2,0,0,1,50.66,32h0Z"/>
+			</symbol>
+			<symbol id="icon-left-arrow" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Left Arrow Icon</title>
+				<desc>Two angled lines meeting at a centerpoint to the left</desc>
+				<path d="M50.66,5.32A2,2,0,0,1,50,6.79L24.82,32,50,57.2a2,2,0,0,1,0,3l-3.21,3.21a2,2,0,0,1-3,0L14,33.48a2,2,0,0,1,0-3L43.86,0.64a2,2,0,0,1,3,0L50,3.85a2,2,0,0,1,.64,1.48h0Z"/>
+	  	</symbol>
+			<symbol id="icon-down-arrow" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Down Arrow Icon</title>
+				<desc>Two angled lines meeting at a centerpoint to the bottom</desc>
+				<path d="M64,18.66a2,2,0,0,1-.64,1.48L33.47,50a2,2,0,0,1-3,0L0.64,20.14a2,2,0,0,1,0-3L3.85,14a2,2,0,0,1,3,0L32,39.18,57.2,14a2,2,0,0,1,3,0l3.21,3.21A2,2,0,0,1,64,18.66h0Z"/>
+			</symbol>
+			<symbol id="icon-up-arrow" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Up Arrow Icon</title>
+				<desc>Two angled lines meeting at a centerpoint to the top</desc>
+				<path d="M64,45.34a2,2,0,0,1-.64,1.48L60.15,50a2,2,0,0,1-3,0L32,24.82,6.8,50a2,2,0,0,1-3,0L0.64,46.81a2,2,0,0,1,0-3L30.52,14a2,2,0,0,1,3,0L63.35,43.86A2,2,0,0,1,64,45.34h0Z"/>
+			</symbol>
+			<symbol id="icon-email" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Email Icon</title>
+				<desc>Outline of an envelope with rounded corners</desc>
+				<path d="M59.43,51.43V24A20.87,20.87,0,0,1,57,26.36q-9.57,7.36-15.21,12.07-1.82,1.54-3,2.39a16.54,16.54,0,0,1-3.09,1.73,9,9,0,0,1-3.66.88H32a9,9,0,0,1-3.66-.88,16.62,16.62,0,0,1-3.09-1.73q-1.14-.86-3-2.39Q16.61,33.71,7,26.36A20.88,20.88,0,0,1,4.57,24V51.43a1.16,1.16,0,0,0,1.14,1.14H58.29a1.16,1.16,0,0,0,1.14-1.14h0Zm0-37.54V13l0-.46q0-.46-0.11-0.45a0.37,0.37,0,0,1-.2-0.32q-0.11-.34-0.32-0.27a0.61,0.61,0,0,1-.5-0.09H5.71a1.16,1.16,0,0,0-1.14,1.14q0,6,5.25,10.14Q16.71,28.14,24.14,34l1.25,1.05q1,0.88,1.64,1.34t1.59,1.13a9.48,9.48,0,0,0,1.8,1,4.27,4.27,0,0,0,1.54.32H32a4.23,4.23,0,0,0,1.54-.32,9.55,9.55,0,0,0,1.8-1q1-.66,1.59-1.13t1.64-1.34L39.86,34q7.43-5.89,14.32-11.32a16.82,16.82,0,0,0,3.59-4.13,8.9,8.9,0,0,0,1.66-4.7h0ZM64,12.57V51.43a5.73,5.73,0,0,1-5.71,5.71H5.71a5.5,5.5,0,0,1-4-1.68,5.5,5.5,0,0,1-1.68-4V12.57a5.5,5.5,0,0,1,1.68-4,5.5,5.5,0,0,1,4-1.68H58.29a5.5,5.5,0,0,1,4,1.68A5.5,5.5,0,0,1,64,12.57Z"/>
+			</symbol>
+			<symbol id="icon-linkedin" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>LinkedIn Icon</title>
+				<desc>The lowercase letters I and N side by side</desc>
+					<path class="background" d="M59.26,0H4.72A4.67,4.67,0,0,0,0,4.61V59.38A4.67,4.67,0,0,0,4.72,64H59.26A4.68,4.68,0,0,0,64,59.38V4.61A4.68,4.68,0,0,0,59.26,0Z"/>
+	    		<path d="M9.85,24.32h9.49V54.86H9.85V24.32ZM14.6,9.14a5.5,5.5,0,1,1-5.5,5.5,5.51,5.51,0,0,1,5.5-5.5" />
+	    		<path d="M25.3,24.32h9.1v4.17h0.13a10,10,0,0,1,9-4.93c9.61,0,11.39,6.33,11.39,14.55V54.86H45.42V40c0-3.54-.07-8.1-4.93-8.1s-5.7,3.86-5.7,7.84V54.86H25.3V24.32Z"/>
+				</symbol>
+			<symbol id="icon-twitter" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Twitter Icon</title>
+				<desc>Silhouette of a bird flying to the right</desc>
+				  <path d="M64,12.15a25.88,25.88,0,0,1-7.54,2.06A13.2,13.2,0,0,0,62.24,7a26.42,26.42,0,0,1-8.34,3.19,13.14,13.14,0,0,0-22.37,12A37.26,37.26,0,0,1,4.47,8.39,13.15,13.15,0,0,0,8.53,25.92a13.13,13.13,0,0,1-5.95-1.64v0.16A13.13,13.13,0,0,0,13.12,37.31a13.15,13.15,0,0,1-3.46.46,13.49,13.49,0,0,1-2.47-.24,13.17,13.17,0,0,0,12.26,9.12A26.34,26.34,0,0,1,3.14,52.29,25.91,25.91,0,0,1,0,52.1,37.13,37.13,0,0,0,20.13,58c24.15,0,37.35-20,37.35-37.35,0-.57,0-1.14,0-1.7A26.43,26.43,0,0,0,64,12.15h0Z"/>
+			</symbol>
+			<symbol id="icon-facebook" aria-labelledby="title" aria-describedby="desc" role="img" viewBox="0 0 64 64">
+				<title>Facebook Icon</title>
+				<desc>The letter F in a special font</desc>
+				<path d="M38,12H48V0H38A14,14,0,0,0,24,14v6H16V32h8V64H36V32H46l2-12H36V14A2,2,0,0,1,38,12Z"/>
+			</symbol>
+		</defs>
+	</svg>
+
+	<!-- this is for ease of copying and pasting. delete before production
+	<svg aria-hidden="true"><use xlink:href="#icon-left-arrow"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-right-arrow"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-up-arrow"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-down-arrow"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-facebook"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-twitter"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-linkedin"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-search"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-email"/></svg>
+	<svg aria-hidden="true"><use xlink:href="#icon-phone"/></svg>
+	-->
+
+	<header>
+		<a href="/" class="logo"><img src="" alt="Demo organization, llc. inc. etc."/></a>
+		<nav><!--  still in progress -->
+			<button type="button" class="menuBtn">
+        <span class="hidden-spoken">Toggle navigation</span>
+        <svg aria-hidden="true"><use xlink:href="#icon-menu"/></svg>
+      </button>
+			<ul id="mainmenu" aria-expanded="false">
+				<li><a href="1">1</a></li>
+				<li><a href="2">2</a></li>
+				<li><a href="3">3</a></li>
+				<li><a href="4">4</a></li>
+				<li><a href="5">5</a></li>
+			</ul>
+		</nav>
+
+		<div class="socialnetworks" role="navigation" aria-label="Social Media">
+			<a href="" class="facebook"><svg aria-hidden="true"><use xlink:href="#icon-facebook"/></svg><span class="hidden-spoken">Company Facebook page</span></a>
+			<a href="" class="twitter"><svg aria-hidden="true"><use xlink:href="#icon-twitter"/></svg><span class="hidden-spoken">Company Twitter stream</span></a>
+		</div>
+
+	</header>
+
+
+	<div id="content">
+
+	</div>
+
+
+	<footer>
+		<small>I think Bigfoot is blurry, that's the problem. It's not the photographer's fault. Bigfoot is blurry, and that's extra scary to me. There's a large, out-of-focus monster roaming the countryside. Run, he's fuzzy, get out of here. ~Mitch Hedberg</small>
+	</footer>
+
+<!-- jquery cdn w fallback
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/path/to/jquery.min.js">\x3C/script>')</script>
+-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+

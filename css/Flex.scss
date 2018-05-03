@@ -1,0 +1,41 @@
+//Equal distribution without left/right margins
+
+.threeColumn{
+	flex-grow:0;
+	margin-left:0;
+	margin-right:1%;
+	width:31.33%;
+	//first column
+	&:nth-of-type(3n+1){
+		//background-color: red;
+		margin-left:0;
+		width:32.33%;
+	}
+	//second column
+	&:nth-of-type(3n+2){
+		//background-color: purple;
+		margin-left:1%;
+		margin-right:1%;
+		width:31.33%;
+	}
+	//third column
+	&:nth-of-type(3n+3){
+		margin-right:0;
+		//background-color: blue;
+		margin-left:1%;
+		width:32.33%;
+	}	
+}
+
+.twoColumn{
+	&:nth-of-type(2n+1){
+		width:49%;
+		margin-left:0;
+		margin-right:1%;
+	}
+	&:nth-of-type(2n+2){
+		width:49%;
+		margin-left:1%;
+		margin-right:0;
+	}
+}
