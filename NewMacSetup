@@ -1,0 +1,3 @@
+
+XCode CLI without full package. From terminal run: xcode-select --install
+Show Hidden Files/Folder. From terminal run: defaults write com.apple.finder AppleShowAllFiles YES
